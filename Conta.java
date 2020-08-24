@@ -1,6 +1,6 @@
 package ProjetoLpooSistemaDeBanco;
 
-public abstract class Conta {
+public abstract class Conta implements InterfaceConta {
 	public String numero;
 	public String agencia;
 	public String nomeagencia;
@@ -45,9 +45,6 @@ public abstract class Conta {
 		this.cpf = cpf;
 	}
 	
-	public abstract void realizadeposito(double deposito);
-	
-	public abstract void realizasaque(double saque);
 	
 	public abstract void renderjuros();
 	
