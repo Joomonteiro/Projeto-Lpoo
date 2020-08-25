@@ -1,4 +1,4 @@
-package ProjetoLpooSistemaDeBanco.source;
+package Banco;
 
 public abstract class Conta implements InterfaceConta {
 	

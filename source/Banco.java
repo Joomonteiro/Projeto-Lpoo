@@ -1,4 +1,4 @@
-package ProjetoLpooSistemaDeBanco.source;
+package source;
 
 public class Banco {
 	
@@ -8,16 +8,19 @@ public class Banco {
 	public String getAgencia() {
 		return agencia;
 	}
-	public void setAgencia(String agencia) {
+	public void setAgencia(final String agencia) {
 		this.agencia = agencia;
 	}
+
 	public String getNomeagencia() {
 		return nomeagencia;
 	}
-	public void setNomeagencia(String nomeagencia) {
+
+	public void setNomeagencia(final String nomeagencia) {
 		this.nomeagencia = nomeagencia;
 	}
-	public Banco(String agencia, String nomeagencia) {
+
+	public Banco(final String agencia, final String nomeagencia) {
 		this.agencia = agencia;
 		this.nomeagencia = nomeagencia;
 	}
