@@ -1,12 +1,21 @@
-package ProjetoLpooSistemaDeBanco;
+package ProjetoLpooSistemaDeBanco.source;
 
 public class ContaPoupanca extends Conta {
 	
-	public double juros=1.1;
+	private double juros;
 	
-	public ContaPoupanca(String numero,String agencia,String nomeagencia,double saldo,Cliente titular) {
-		super(numero, agencia, nomeagencia, saldo, titular);
+	public double getJuros() {
+		return juros;
 	}
+	public void setJuros(double juros) {
+		this.juros = juros;
+	}
+	
+	public ContaPoupanca(String numero,Banco banco,double saldo,Cliente titular, double juros) {
+		super(numero, banco, saldo, titular);
+		this.juros = juros;
+	}
+	
 	public void realizasaque(double saque) {
 		if((this.saldo - saque)>=0) {
 			this.saldo = this.saldo - saque;
@@ -15,8 +24,8 @@ public class ContaPoupanca extends Conta {
 	public  void realizadeposito(double deposito) {
 		this.saldo = this.saldo + deposito;
 	}
-	public void renderjuros() {
-		this.saldo = this.saldo*juros; 
+	public void renderjuros(double juros) {
+		this.saldo = saldo+(juros*saldo/100); 
 	}
 
 }

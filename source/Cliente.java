@@ -1,10 +1,10 @@
-package ProjetoLpooSistemaDeBanco;
+package ProjetoLpooSistemaDeBanco.source;
 
 public class Cliente {
 	
-	public String rg;
-	public String cpf;
-	public String nome;
+	private String rg;
+	private String cpf;
+	private String nome;
 	
 	public String getRg() {
 		return rg;

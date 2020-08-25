@@ -1,9 +1,9 @@
-package ProjetoLpooSistemaDeBanco;
+package ProjetoLpooSistemaDeBanco.source;
 
 public class ContaCorrente extends Conta {
 	
-	public ContaCorrente(String numero,String agencia,String nomeagencia,double saldo,Cliente titular) {
-		super(numero, agencia, nomeagencia, saldo, titular);
+	public ContaCorrente(String numero,Banco banco,double saldo,Cliente titular) {
+		super(numero, banco, saldo, titular);
 	}
 	public void realizasaque(double saque) {
 		if((this.saldo - saque)>=0) {

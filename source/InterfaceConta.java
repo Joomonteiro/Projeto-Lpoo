@@ -1,4 +1,4 @@
-package ProjetoLpooSistemaDeBanco;
+package ProjetoLpooSistemaDeBanco.source;
 
 public interface InterfaceConta {
 	

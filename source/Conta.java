@@ -1,12 +1,11 @@
-package ProjetoLpooSistemaDeBanco;
+package ProjetoLpooSistemaDeBanco.source;
 
 public abstract class Conta implements InterfaceConta {
-	public String numero;
-	public String agencia;
-	public String nomeagencia;
-	public double saldo;
-	Cliente titular;
 	
+	private String numero;
+	protected double saldo;
+	private Cliente titular;
+	private Banco banco;
 	
 	public String getNumero() {
 		return numero;
@@ -14,34 +13,29 @@ public abstract class Conta implements InterfaceConta {
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
-	public String getAgencia() {
-		return agencia;
-	}
-	public void setAgencia(String agencia) {
-		this.agencia = agencia;
-	}
-	public String getNomeagencia() {
-		return nomeagencia;
-	}
-	public void setNomeagencia(String nomeagencia) {
-		this.nomeagencia = nomeagencia;
-	}
-	
 	public double getSaldo() {
 		return saldo;
 	}
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
-	public Conta(String numero,String agencia,String nomeagencia,double saldo,Cliente titular) {
-		this.numero = numero;
-		this.agencia = agencia;
-		this.nomeagencia = nomeagencia;
-		this.saldo = saldo;
+	public Cliente getTitular() {
+		return titular;
+	}
+	public void setTitular(Cliente titular) {
 		this.titular = titular;
-		
+	}
+	public Banco getBanco() {
+		return banco;
+	}
+	public void setBanco(Banco banco) {
+		this.banco = banco;
 	}
 	
-	
-	
+	public Conta(String numero,Banco banco,double saldo,Cliente titular) {
+		this.numero = numero;
+		this.banco = banco;
+		this.saldo = saldo;
+		this.titular = titular;
+	}
 }
