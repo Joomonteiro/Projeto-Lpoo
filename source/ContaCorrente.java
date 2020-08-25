@@ -1,16 +1,25 @@
 package ProjetoLpooSistemaDeBanco.source;
 
 public class ContaCorrente extends Conta {
-	
-	public ContaCorrente(String numero,Banco banco,double saldo,Cliente titular) {
+
+	public ContaCorrente(String numero, Banco banco, double saldo, Cliente titular) {
 		super(numero, banco, saldo, titular);
 	}
-	public void realizasaque(double saque) {
-		if((this.saldo - saque)>=0) {
-			this.saldo = this.saldo - saque;
-		}
+
+	public void realizasaque(double saque) throws SaldoException {
+
+		if (saque > this.saldo) {
+            throw new SaldoException();
+        }
+
+        if (saque < 0) {
+            throw new SaqueNegativoException();
+        }
+
+        this.saldo = this.saldo - saque;
 	}
-	public  void realizadeposito(double deposito) {
+
+	public void realizadeposito(double deposito) {
 		this.saldo = this.saldo + deposito;
 	}
 }
